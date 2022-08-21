@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/ePT"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:hint="Enter Product Name"
+                android:padding="10dp"
+                app:boxStrokeColor="#3F51B5"
+                app:hintTextColor="@color/teal_700"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterProductNametxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:textColor="@color/teal_700"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ePrice"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ePT"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="Enter Product Price"
+                android:padding="10dp"
+                app:boxStrokeColor="#3F51B5"
+                app:hintTextColor="@color/teal_700">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterProductPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:textColor="@color/teal_700"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/eOffer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ePrice"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="Enter Product Offer"
+                android:padding="10dp"
+                app:boxStrokeColor="#3F51B5"
+                app:hintTextColor="@color/teal_700">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterProductOffer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:textColor="@color/teal_700"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/eDis"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/eOffer"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="Enter Product Description"
+                android:padding="10dp"
+                app:boxStrokeColor="#3F51B5"
+                app:hintTextColor="@color/teal_700">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterProductDisc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:textColor="@color/teal_700"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ecat"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/eDis"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="Enter Product Category"
+                android:padding="10dp"
+                app:boxStrokeColor="#3F51B5"
+                app:hintTextColor="@color/teal_700">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterProductCategray"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:textColor="@color/teal_700"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/PImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ecat"
+                android:layout_marginLeft="20dp"
+                android:text="Product Image"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cView1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/PImage"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true"
+
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/pimage"
+                        android:layout_width="150dp"
+                        android:layout_height="110dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:src="@color/teal_700" />
+
+                    <Button
+                        android:id="@+id/uploadImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pimage"
+                        android:layout_centerHorizontal="true"
+                        android:text="Upload Image" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/insertBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cView1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/teal_700"
+                android:text="Insert" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

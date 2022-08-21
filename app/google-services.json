@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "336681034406",
+    "project_id": "adminshoppling",
+    "storage_bucket": "adminshoppling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336681034406:android:69c4e57b0a8e59f0fd8a67",
+        "android_client_info": {
+          "package_name": "com.example.adminshoppingapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336681034406-lucjdmad4m3vnr8lrs4c98ta7f3dks0u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adminshoppingapplication",
+            "certificate_hash": "ae0803c4fc16ab58bdfaf652e84c167d590fda8f"
+          }
+        },
+        {
+          "client_id": "336681034406-787a2lljgv21bucpt2ccjp9be2k5klpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBws4l0Ch1IVo9rK2dUvhJ0xQxNc9y0Gzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336681034406-787a2lljgv21bucpt2ccjp9be2k5klpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable/line.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable/shwod.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_home.xml" value="0.14666666666666667" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_home2.xml" value="0.14666666666666667" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_login_screen.xml" value="0.18385416666666668" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.18385416666666668" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/item.xml" value="0.16666666666666666" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/itemdialog.xml" value="0.15091919623770841" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
