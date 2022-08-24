@@ -10,7 +10,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import com.example.adminshoppingapplication.Model.ProductModelData
 import com.example.adminshoppingapplication.databinding.ActivityMainBinding
 import com.google.firebase.database.DataSnapshot
@@ -27,25 +26,26 @@ class MainActivity : AppCompatActivity() {
     lateinit var blinding: ActivityMainBinding
     var list1 = arrayListOf<ModelData>()
     var stringList = arrayListOf<String>()
+    var data = arrayOf<String>("select")
     var downloadUri: Uri? = null
+    lateinit var catename: String
+     var cid: Int? =null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         blinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(blinding.root)
 
-        insertCategory()
-
         readData()
 
-        categorySpinner()
-
-//         categry add btn======
-        categryAddBtn()
 //         product details==============
         productInsert()
 
+        blinding.imageBtnBack.setOnClickListener {
 
+            onBackPressed()
+        }
     }
 // product detalis insert =====
 
@@ -57,11 +57,13 @@ class MainActivity : AppCompatActivity() {
             gallaryupload()
 
         }
+
         blinding.insertBtn.setOnClickListener {
 
 //            productInserData(productModelData)
 //         upload Img in firebase storege
             updateImg()
+
         }
 
     }
@@ -89,17 +91,14 @@ class MainActivity : AppCompatActivity() {
                         blinding.enterProductPriceTxt.text.toString(),
                         blinding.enterProductOfferTxt.text.toString(),
                         blinding.enterProductDiscTxt.text.toString(),
-                        blinding.enterProductCategrayTxt.text.toString(),
-                        downloadUri.toString()
+                        catename,
+                        downloadUri.toString(),
+                        cid
                     )
 
                     productInserData(productModelData)
                 }
             }
-
-
-
-
             Toast.makeText(this, "Sucees", Toast.LENGTH_SHORT).show()
 
         }
@@ -112,14 +111,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun gallaryupload() {
-
         var i = Intent(
             Intent.ACTION_PICK,
             MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         )
         startActivityForResult(i, 100)
-
-
     }
 
     private fun productInserData(productModelData: ProductModelData) {
@@ -128,77 +124,10 @@ class MainActivity : AppCompatActivity() {
         var databaseReference = firebaseDatabase.reference
 
         databaseReference.child("Product").push().setValue(productModelData)
-
-
 //        list.clear()
 //        Toast.makeText(this, "su", Toast.LENGTH_SHORT).show()
-
-
         var i = Intent(this, Home::class.java)
         startActivity(i)
-
-    }
-
-
-    //     catrgry add Btn method======
-    private fun categryAddBtn() {
-
-        blinding.categeryBtn.setOnClickListener {
-            blinding.rv1.isVisible = true
-
-
-        }
-        blinding.arrowImg.setOnClickListener {
-
-            blinding.rv1.isVisible = false
-
-        }
-
-    }
-
-    //         categry Data Spineer
-
-    private fun categorySpinner() {
-
-        var arrayAdapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, stringList)
-
-        blinding.categorySpinner.adapter = arrayAdapter
-
-//        val l1= resources.getStringArray(stringList.size)
-
-        blinding.categorySpinner.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {}
-                override fun onNothingSelected(p0: AdapterView<*>?) { }
-            }
-    }
-
-
-//    categry Insert data =======
-
-    private fun insertCategory() {
-
-        blinding.btn.setOnClickListener {
-
-            var dbHelper = ModelData(
-                blinding.enterCategaryId.text.toString(),
-                blinding.enterProductName.text.toString()
-            )
-
-            var firebaseDatabase = FirebaseDatabase.getInstance()
-            var databaseReference = firebaseDatabase.reference
-            databaseReference.child("categry").push().setValue(dbHelper)
-
-            list1.clear()
-            stringList.clear()
-
-        }
 
     }
 
@@ -206,33 +135,51 @@ class MainActivity : AppCompatActivity() {
     // categry    read==========
     private fun readData() {
 
-        list1.clear()
-        stringList.clear()
-
         var firebaseDatabase = FirebaseDatabase.getInstance()
         var databaseReference = firebaseDatabase.reference
 
+
+        blinding.catSppiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+//                Toast.makeText(this@MainActivity, "${data[position]}", Toast.LENGTH_SHORT).show()
+
+                catename = data[position]
+                cid=position+1
+
+            }
+        }
+
         databaseReference.child("categry").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                list1.clear()
+                stringList.clear()
+                data = emptyArray()
+
                 for (x in snapshot.children) {
 
                     var id = x.child("id").getValue().toString()
                     var category = x.child("pro").getValue().toString()
 
-                    var data = ModelData(id, category)
+                    var categry = ModelData(id, category)
 
-                    var stringcategory = category
-
-                    list1.add(data)
-
-                    stringList.add(stringcategory)
-
+                    list1.add(categry)
+                    data += x.child("pro").getValue().toString()
 
                     Log.e("TAG", "onDataChange: $stringList")
 
-
                 }
 
+                setupSpinner(data)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -250,16 +197,21 @@ class MainActivity : AppCompatActivity() {
         if (100 == requestCode) {
 
             url = data?.data!!
-
             blinding.pimage.setImageURI(url)
-
         }
 
     }
+
+    fun setupSpinner(data: Array<String>) {
+        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, data)
+        blinding.catSppiner.adapter = arrayAdapter
+        arrayAdapter.notifyDataSetChanged()
+    }
+
 }
 
 // categry add class
-class ModelData(val id: String, val pro: String) {}
+//class ModelData(val id: String, val pro: String) {}
 
 
 

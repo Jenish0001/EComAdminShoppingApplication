@@ -6,9 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
+    <RelativeLayout
+        android:id="@+id/rv4"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="home page"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+          android:id="@+id/categoryBtn"
+            android:src="@drawable/categaryicon" />
+
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rv4" />
+
+    <RelativeLayout
+        android:id="@+id/actionbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#04104C"
+            app:cardCornerRadius="13dp">
+
+            <ImageView
+                android:id="@+id/productBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_add_24" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

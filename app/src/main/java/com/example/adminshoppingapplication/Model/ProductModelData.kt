@@ -9,4 +9,5 @@ data class ProductModelData(
     val pdes: String,
     val pcat: String,
     val url: String,
+    val cid: Int?,
 )

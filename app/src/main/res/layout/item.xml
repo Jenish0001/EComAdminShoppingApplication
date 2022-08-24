@@ -2,136 +2,154 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="240dp"
+    android:layout_height="wrap_content"
     android:background="@color/white">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:backgroundTint="#f3f3f3"
-        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp"
         app:cardUseCompatPadding="true"
-
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         >
 
-        <ImageView
-            android:id="@+id/img"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="12dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:layout_height="180dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:backgroundTint="#f3f3f3"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+
+                >
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_launcher_background" />
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/cv">
+
+
+                <TextView
+                    android:id="@+id/pname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="name"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/ptype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pname"
+                    android:text="$"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/pprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pname"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@id/ptype"
+                    android:text="price"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/poffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pprice"
+                    android:text="offer"
+                    android:textColor="@color/black"
+                    android:textSize="17dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/ptaka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pprice"
+                    android:layout_toEndOf="@id/poffer"
+                    android:text=" %"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvDelet"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/line"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true"
+
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="serif"
+                        android:text="Delet"
+                        android:textColor="#B5FF0000"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvupdate"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/cvDelet"
+                    android:defaultFocusHighlightEnabled="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="serif"
+                        android:text="Edit Data"
+                        android:textColor="#D24CCF15"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="155dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@id/cv">
-
-
-        <TextView
-            android:id="@+id/pname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="name"
-            android:textColor="@color/black"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/ptype"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pname"
-            android:text="$"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
-
-        <TextView
-            android:id="@+id/pprice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pname"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/ptype"
-            android:text="price"
-            android:textColor="@color/black"
-            android:textSize="17dp" />
-
-        <TextView
-            android:id="@+id/poffer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pprice"
-            android:text="offer"
-            android:textColor="@color/black"
-            android:textSize="17dp"
-
-            />
-
-        <TextView
-            android:id="@+id/ptaka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pprice"
-            android:layout_toEndOf="@id/poffer"
-            android:text=" %"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-
-            />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvDelet"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="@drawable/line"
-            android:layout_alignParentBottom="true"
-            app:cardCornerRadius="10dp"
-            app:cardUseCompatPadding="true"
-
-            >
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="serif"
-                android:text="Delet"
-                android:textColor="#B5FF0000"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="100dp"
-            android:id="@+id/cvupdate"
-            android:layout_height="50dp"
-            android:layout_toEndOf="@+id/cvDelet"
-            android:layout_alignParentBottom="true"
-            android:defaultFocusHighlightEnabled="true"
-            app:cardCornerRadius="10dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="serif"
-                android:text="Edit Data"
-                android:textColor="#D24CCF15"
-                android:textSize="16dp"
-                android:textStyle="bold"
-
-                />
-
-        </androidx.cardview.widget.CardView>
-    </RelativeLayout>
 
 
 </RelativeLayout>

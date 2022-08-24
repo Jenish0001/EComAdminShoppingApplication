@@ -10,94 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!-- visible  =================-->
-
-        <RelativeLayout
-            android:id="@+id/rv1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:visibility="gone">
-
-            <RelativeLayout
-                android:id="@+id/rvvisible1"
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
-
-                <ImageView
-                    android:id="@+id/arrowImg"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/arrowleft" />
-
-            </RelativeLayout>
-
-            <EditText
-                android:id="@+id/enterCategaryId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rvvisible1"
-                android:layout_marginTop="20dp"
-                android:cursorVisible="true"
-                android:fontFamily="serif"
-                android:hint="Enter Categry Id"
-                android:padding="20dp"
-                android:shadowColor="#A7AEAD"
-
-                />
-
-            <EditText
-                android:id="@+id/enterProductName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/enterCategaryId"
-                android:layout_marginTop="10dp"
-                android:cursorVisible="true"
-                android:fontFamily="serif"
-                android:hint="enter Product Name"
-                android:padding="20dp"
-                android:shadowColor="#A7AEAD" />
-
-
-            <Button
-                android:id="@+id/btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/enterProductName"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="Insert" />
-
-            <Spinner
-                android:id="@+id/categorySpinner"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/btn"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="25dp"
-                android:background="@drawable/shwod"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/txtTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="hi"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-
-                />
-
-        </RelativeLayout>
-
         <!-- action bar ================-->
 
         <RelativeLayout
@@ -113,11 +25,23 @@
                 android:layout_alignParentBottom="true"
                 android:layout_margin="30dp">
 
-                <ImageView
-                    android:id="@+id/categeryBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/categaryicon" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="#04104C"
+                    app:cardCornerRadius="13dp">
+
+                    <ImageView
+                        android:id="@+id/categeryBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_baseline_add_24" />
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
@@ -126,8 +50,41 @@
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
+                    android:id="@+id/rv3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:background="@color/teal_700"
+                    android:layout_height="?actionBarSize">
+
+                    <ImageView
+                        android:id="@+id/imageBtnBack"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/white"
+                        android:layout_margin="10dp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:layout_toEndOf="@id/imageBtnBack"
+                        android:text="Add Product item"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rv3">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/ePT"
@@ -135,7 +92,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
                         android:gravity="center"
                         android:hint="Enter Product Name"
                         android:padding="10dp"
@@ -149,6 +105,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
+                            android:fontFamily="serif"
                             android:textColor="@color/teal_700"
                             android:textCursorDrawable="?attr/colorControlActivated"
                             android:textSize="18dp"
@@ -175,6 +132,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
+                            android:fontFamily="serif"
                             android:textColor="@color/teal_700"
                             android:textCursorDrawable="?attr/colorControlActivated"
                             android:textSize="18dp"
@@ -199,6 +157,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
+                            android:fontFamily="serif"
                             android:textColor="@color/teal_700"
                             android:textCursorDrawable="?attr/colorControlActivated"
                             android:textSize="18dp"
@@ -223,42 +182,30 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
+                            android:fontFamily="serif"
                             android:textColor="@color/teal_700"
                             android:textCursorDrawable="?attr/colorControlActivated"
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/ecat"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    <Spinner
+                        android:id="@+id/catSppiner"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_below="@id/eDis"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:hint="Enter Product Category"
-                        android:padding="10dp"
-                        app:boxStrokeColor="#3F51B5"
-                        app:hintTextColor="@color/teal_700">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/enterProductCategrayTxt"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:cursorVisible="true"
-                            android:textColor="@color/teal_700"
-                            android:textCursorDrawable="?attr/colorControlActivated"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#BFBFBF" />
 
                     <TextView
                         android:id="@+id/PImage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/ecat"
+                        android:layout_below="@id/catSppiner"
                         android:layout_marginLeft="20dp"
                         android:text="Product Image"
                         android:textSize="15dp"
@@ -267,28 +214,25 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cView1"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="220dp"
                         android:layout_below="@id/PImage"
                         android:layout_margin="10dp"
                         app:cardCornerRadius="5dp"
-                        app:cardUseCompatPadding="true"
-
-                        >
+                        app:cardUseCompatPadding="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="1dp">
 
                             <ImageView
                                 android:id="@+id/pimage"
                                 android:layout_width="150dp"
-                                android:layout_height="110dp"
+                                android:layout_height="140dp"
                                 android:layout_centerHorizontal="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginEnd="20dp"
-                                android:layout_marginBottom="20dp"
-                                android:src="@color/teal_700" />
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/defualimge" />
+
 
                             <Button
                                 android:id="@+id/uploadImg"
@@ -296,6 +240,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/pimage"
                                 android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="@color/black"
                                 android:text="Upload Image" />
 
                         </RelativeLayout>
@@ -303,14 +249,30 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <Button
-                        android:id="@+id/insertBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
                         android:layout_below="@id/cView1"
-                        android:layout_marginLeft="10dp"
-                        android:backgroundTint="@color/teal_700"
-                        android:text="Insert" />
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardUseCompatPadding="true"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/insertBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/teal_700"
+                            android:gravity="center"
+                            android:text="Insert"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
 

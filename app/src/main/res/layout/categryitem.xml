@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/rv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rvvisible1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/teal_700">
+
+            <ImageView
+                android:id="@+id/arrowImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/arrowImg"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Add Categry"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="20dp"
+                android:textStyle="bold"
+
+                />
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/categryid"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvvisible1"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="Enter Categry Id"
+            android:padding="10dp"
+            app:boxStrokeColor="#3F51B5"
+            app:hintTextColor="@color/teal_700"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enterCategaryId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cursorVisible="true"
+                android:fontFamily="serif"
+                android:textColor="@color/teal_700"
+                android:textCursorDrawable="?attr/colorControlActivated"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/enCategaryNa"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categryid"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:hint="Enter Categry Name"
+            android:padding="10dp"
+            app:boxStrokeColor="#3F51B5"
+            app:hintTextColor="@color/teal_700"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enterProductName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cursorVisible="true"
+                android:fontFamily="serif"
+                android:textColor="@color/teal_700"
+                android:textCursorDrawable="?attr/colorControlActivated"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/categorySpinner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Insert" />
+
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/enCategaryNa"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/shwod"
+            android:textAlignment="center" />
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/txtTxt"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="20dp"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="hi"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="20dp"-->
+
+
+    </RelativeLayout>
+</RelativeLayout>

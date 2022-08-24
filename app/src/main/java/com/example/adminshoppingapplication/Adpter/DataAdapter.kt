@@ -1,6 +1,9 @@
 package com.example.adminshoppingapplication.Adpter
 
+import android.app.AlertDialog
 import android.app.Dialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.adminshoppingapplication.Home
 import com.example.adminshoppingapplication.Model.ModelReadData
+import com.example.adminshoppingapplication.Model.ProductModelData
 import com.example.adminshoppingapplication.R
+import com.example.adminshoppingapplication.updateItem_acitivity
 import com.google.firebase.database.FirebaseDatabase
+
 
 class DataAdapter(
     val home: Home, val list: ArrayList<ModelReadData>
@@ -27,6 +33,7 @@ class DataAdapter(
         var img = itemView.findViewById<ImageView>(R.id.img)
         var cvDelet = itemView.findViewById<CardView>(R.id.cvDelet)
         var cvupdate = itemView.findViewById<CardView>(R.id.cvupdate)
+
 
     }
 
@@ -47,75 +54,62 @@ class DataAdapter(
         var dr = firebaseDatabase.reference
 
         holder.cvDelet.setOnClickListener {
-            dr.child("Product").child("${list.get(position).key}").removeValue()
-            list.clear()
+
+            val builder1: AlertDialog.Builder = AlertDialog.Builder(home)
+
+            builder1.setMessage("Are you sure you want to delet ?")
+            builder1.setCancelable(true)
+
+            builder1.setPositiveButton(
+                "Delet",
+
+                DialogInterface.OnClickListener { dialog, id ->
+                    dr.child("Product").child(list.get(position).key).removeValue()
+                    list.clear()
+                    dialog.cancel()
+                })
+
+            builder1.setNegativeButton(
+                "cancle",
+                DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
+
+            val alert11: AlertDialog = builder1.create()
+            alert11.show()
 
 
         }
+
         holder.cvupdate.setOnClickListener {
+            var pname=list[position].pname
+            var pprice=list[position].pprice
+            var poffer=list[position].poffer
+            var pcat=list[position].pcat
+            var pdes=list[position].pdes
+            var downloadUrl=list[position].downloadUrl
+//            var cid=list[position].
 
-            product(position)
+            var key=list[position].key
 
+            var i=Intent(home,updateItem_acitivity::class.java)
+            i.putExtra("n1",pname)
+            i.putExtra("n2",pprice)
+            i.putExtra("n3",poffer)
+            i.putExtra("n4",pcat)
+            i.putExtra("n5",pdes)
+            i.putExtra("n6",downloadUrl)
+            i.putExtra("n7",key)
+            home.startActivity(i)
         }
-
-
     }
 
-    private fun product(position: Int) {
-
-
-        var dialog = Dialog(home)
-        dialog.setContentView(R.layout.itemdialog)
-
-        dialog.show()
-
-
-        var enterProductName = dialog.findViewById<EditText>(R.id.enterProductNametxt)
-        var enterProductPrice = dialog.findViewById<EditText>(R.id.enterProductPrice)
-        var enterProductOffer= dialog.findViewById<EditText>(R.id.enterProductOffer)
-        var enterProductCategray = dialog.findViewById<EditText>(R.id.enterProductCategray)
-        var enterProductDisc= dialog.findViewById<EditText>(R.id.enterProductDisc)
-        var pimage = dialog.findViewById<ImageView>(R.id.pimage)
-        var insertBtn = dialog.findViewById<Button>(R.id.insertBtn)
-
-
-        enterProductName.setText(list.get(position).pname)
-        enterProductPrice.setText(list.get(position).pprice)
-        enterProductOffer.setText(list.get(position).poffer)
-        enterProductCategray.setText(list.get(position).pcat)
-        enterProductDisc.setText(list.get(position).pdes)
-
-        Glide.with(home).load(list.get(position).downloadUrl).centerCrop().into(pimage)
-
-
-        insertBtn.setOnClickListener {
-
-            var firebaseDatabase = FirebaseDatabase.getInstance()
-            var dr = firebaseDatabase.reference
-
-            var m=list[position].downloadUrl
-            var m1 = ModelRead(
-                enterProductName.text.toString(),
-                enterProductPrice.text.toString(),
-                enterProductCategray.text.toString(),
-                enterProductOffer.text.toString(),
-                enterProductDisc.text.toString(),
-               m
-            )
-
-                    dr.child("Product").child("${list.get(position).key}").setValue(m1)
-
-
-            dialog.dismiss()
-
-            list.clear()
-        }
-
-    }
 
     override fun getItemCount(): Int {
 
         return list.size
     }
 
+
 }
+
+
+

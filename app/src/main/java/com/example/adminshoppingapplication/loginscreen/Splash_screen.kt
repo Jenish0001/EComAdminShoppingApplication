@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.adminshoppingapplication.Home
 import com.example.adminshoppingapplication.MainActivity
 import com.example.adminshoppingapplication.R
 import com.google.firebase.auth.FirebaseAuth
@@ -19,14 +20,13 @@ class splash_screen : AppCompatActivity() {
         Handler().postDelayed({
 
             if (user != null) {
-                var intent = Intent(this, MainActivity::class.java)
+                var intent = Intent(this, Home::class.java)
                 startActivity(intent)
 
             } else {
 
                 var intent = Intent(this, LoginScreen::class.java)
                 startActivity(intent)
-
             }
             finish()
         }, 300)
