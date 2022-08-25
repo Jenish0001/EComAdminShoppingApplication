@@ -8,12 +8,12 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="5dp"
-        app:cardUseCompatPadding="true"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        >
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                     android:id="@+id/img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="12dp"
+                    android:padding="0dp"
                     android:src="@drawable/ic_launcher_background" />
 
             </androidx.cardview.widget.CardView>
@@ -51,15 +51,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
+                    android:maxLines="1"
                     android:text="name"
                     android:textColor="@color/black"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/ptype"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/pname"
+                    android:fontFamily="serif"
                     android:text="$"
                     android:textColor="@color/black"
                     android:textSize="18dp" />
@@ -71,6 +73,8 @@
                     android:layout_below="@id/pname"
                     android:layout_marginLeft="10dp"
                     android:layout_toEndOf="@id/ptype"
+                    android:fontFamily="serif"
+                    android:maxLines="1"
                     android:text="price"
                     android:textColor="@color/black"
                     android:textSize="17dp" />
@@ -80,6 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/pprice"
+                    android:fontFamily="serif"
                     android:text="offer"
                     android:textColor="@color/black"
                     android:textSize="17dp"
@@ -92,11 +97,25 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/pprice"
                     android:layout_toEndOf="@id/poffer"
+                    android:fontFamily="serif"
+                    android:maxLines="1"
                     android:text=" %"
                     android:textColor="@color/black"
                     android:textSize="20dp"
 
                     />
+
+                <TextView
+                    android:id="@+id/pdic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/poffer"
+                    android:fontFamily="serif"
+                    android:maxLines="2"
+                    android:text="Decsciption"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvDelet"
@@ -108,7 +127,6 @@
                     app:cardUseCompatPadding="true"
 
                     >
-
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -141,15 +159,9 @@
                         android:textColor="#D24CCF15"
                         android:textSize="16dp"
                         android:textStyle="bold"
-
                         />
-
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
-
         </RelativeLayout>
-
     </androidx.cardview.widget.CardView>
-
-
 </RelativeLayout>

@@ -201,6 +201,7 @@ class Home : AppCompatActivity() {
 
         firebaseReference.child("Product").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                list.clear()
                 for (x in snapshot.children) {
                     var pname = x.child("pname").getValue().toString()
                     var pprice = x.child("pprice").getValue().toString()

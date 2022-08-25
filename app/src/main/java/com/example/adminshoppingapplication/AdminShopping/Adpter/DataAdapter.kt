@@ -26,6 +26,7 @@ class DataAdapter(
         var pname = itemView.findViewById<TextView>(R.id.pname)
         var pprice = itemView.findViewById<TextView>(R.id.pprice)
         var poffer = itemView.findViewById<TextView>(R.id.poffer)
+        var pdic = itemView.findViewById<TextView>(R.id.pdic)
         var img = itemView.findViewById<ImageView>(R.id.img)
         var cvDelet = itemView.findViewById<CardView>(R.id.cvDelet)
         var cvupdate = itemView.findViewById<CardView>(R.id.cvupdate)
@@ -44,6 +45,7 @@ class DataAdapter(
         holder.pname.text = list[position].pname
         holder.pprice.text = list[position].pprice
         holder.poffer.text = list[position].poffer
+        holder.pdic.text = list[position].pdes
         Glide.with(home).load(list[position].downloadUrl).centerCrop().into(holder.img)
 
         var firebaseDatabase = FirebaseDatabase.getInstance()
@@ -104,7 +106,6 @@ class DataAdapter(
 
         return list.size
     }
-
 
 }
 

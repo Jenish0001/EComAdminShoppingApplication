@@ -5,10 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".AdminShopping.loginscreen.MainActivity">
+    <RelativeLayout
+        android:id="@+id/rv3"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/teal_700">
 
-    <LinearLayout
+        <ImageView
+            android:id="@+id/imageBtnBack"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/imageBtnBack"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Add Product item"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/rv3"
         android:orientation="vertical">
         <!-- action bar ================-->
 
@@ -17,69 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/actionbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="30dp">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:backgroundTint="#04104C"
-                    app:cardCornerRadius="13dp">
-
-                    <ImageView
-                        android:id="@+id/categeryBtn"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_baseline_add_24" />
-
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:id="@+id/rv3"
-                    android:layout_width="match_parent"
-                    android:background="@color/teal_700"
-                    android:layout_height="?actionBarSize">
 
-                    <ImageView
-                        android:id="@+id/imageBtnBack"
-                        android:layout_width="40dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_baseline_arrow_back_24"
-                        android:layout_centerVertical="true"
-                        android:backgroundTint="@color/white"
-                        android:layout_margin="10dp"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="serif"
-                        android:layout_toEndOf="@id/imageBtnBack"
-                        android:text="Add Product item"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-
-                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -280,6 +254,6 @@
         </RelativeLayout>
 
 
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

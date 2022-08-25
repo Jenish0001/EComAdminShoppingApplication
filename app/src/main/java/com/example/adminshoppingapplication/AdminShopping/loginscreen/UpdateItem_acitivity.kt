@@ -27,10 +27,8 @@ import java.io.File
 class updateItem_acitivity : AppCompatActivity() {
 
     var id1: Int? = null
-    var id: String?=null
+    var id: String? = null
     var url: Uri? = null
-    var downloadUri: Uri? = null
-    lateinit var list: ArrayList<ModelReadData>
     var list1 = arrayListOf<ModelData>()
     var stringList = arrayListOf<String>()
     var data = arrayOf<String>("select")
@@ -57,21 +55,16 @@ class updateItem_acitivity : AppCompatActivity() {
         var pcat = intent.getStringExtra("n4")
         var pdes = intent.getStringExtra("n5")
         var downloadimage = intent.getStringExtra("n6")
-         id = intent.getStringExtra("n8")
-
-        //  position = pos?.toInt()
+        id = intent.getStringExtra("n8")
 
 
         Toast.makeText(this, "$id", Toast.LENGTH_SHORT).show()
 
-        id1=id!!.toInt()
-
+        id1 = id!!.toInt()
 
         blinding.enterProductNametxt.setText(pname)
         blinding.enterProductPrice.setText(pprice)
         blinding.enterProductOffer.setText(poffer)
-//        blinding.enterProductCategray.setText(pcat)
-//        setupSpinner1(pcat)
         blinding.enterProductDisc.setText(pdes)
 
         Glide.with(this).load(downloadimage).centerCrop().into(blinding.pimage)
@@ -82,14 +75,15 @@ class updateItem_acitivity : AppCompatActivity() {
 
         blinding.uploadImg.setOnClickListener {
 
-
             gallaryupload()
 
         }
 
         blinding.insertBtn.setOnClickListener {
 
-            updateImg()
+            updateData(downloadimage.toString())
+            var i = Intent(this, Home::class.java)
+            startActivity(i)
 
         }
     }
@@ -147,61 +141,79 @@ class updateItem_acitivity : AppCompatActivity() {
     fun setupSpinner(data: Array<String>) {
 
         val arrayAdapter = Home_Spinner_Adpter(this, data)
-            blinding.catSppiner.adapter = arrayAdapter
+        blinding.catSppiner.adapter = arrayAdapter
         arrayAdapter.notifyDataSetChanged()
 
-        blinding.catSppiner.setSelection(id1!! -1)
+        blinding.catSppiner.setSelection(id1!! - 1)
     }
 
-    private fun updateImg() {
+    private fun updateImageToStorage() {
 
         var file = File(url.toString())
         var storage = Firebase.storage
-        var key = intent.getStringExtra("n7")
-        var downloadimage = intent.getStringExtra("n6")
 
         var storageReference = storage.reference.child(file.name)
         var UploadTask = storageReference.putFile(url!!)
 
-if(downloadimage!=null)
-{
 
-
-}
         UploadTask.addOnSuccessListener { res ->
 
             storageReference.downloadUrl.addOnSuccessListener { uri ->
-
-                if (uri != null) {
-
-                    downloadUri = uri
-                    var productModelData = ProductModelData(
-                        blinding.enterProductNametxt.text.toString(),
-                        blinding.enterProductPrice.text.toString(),
-                        blinding.enterProductOffer.text.toString(),
-                        blinding.enterProductDisc.text.toString(),
-                        categary!!,
-                        //blinding.enterProductCategray.text.toString(),
-                        downloadUri.toString(),
-                        cid
-                    )
-                    var firebaseDatabase = FirebaseDatabase.getInstance()
-                    var databaseReference = firebaseDatabase.reference
-
-                    databaseReference.child("Product").child(key!!).setValue(productModelData)
-
-                }
+                var temp = uri
+                updateData1(temp.toString())
                 var i = Intent(this, Home::class.java)
                 startActivity(i)
-
             }
             Toast.makeText(this, "Sucees", Toast.LENGTH_SHORT).show()
 
         }.addOnFailureListener { error ->
 
-                Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show()
+        }
 
-            }
+    }
+
+    private fun updateData1(temp: String) {
+
+        var key = intent.getStringExtra("n7")
+
+        var productModelData = ProductModelData(
+            blinding.enterProductNametxt.text.toString(),
+            blinding.enterProductPrice.text.toString(),
+            blinding.enterProductOffer.text.toString(),
+            blinding.enterProductDisc.text.toString(),
+            categary!!,
+            temp,
+            cid
+        )
+
+        var firebaseDatabase = FirebaseDatabase.getInstance()
+        var databaseReference = firebaseDatabase.reference
+
+        databaseReference.child("Product").child(key!!).setValue(productModelData)
+
+
+    }
+
+    private fun updateData(temp: String) {
+
+        var key = intent.getStringExtra("n7")
+
+        var productModelData = ProductModelData(
+            blinding.enterProductNametxt.text.toString(),
+            blinding.enterProductPrice.text.toString(),
+            blinding.enterProductOffer.text.toString(),
+            blinding.enterProductDisc.text.toString(),
+            categary!!,
+            temp,
+            cid
+        )
+
+        var firebaseDatabase = FirebaseDatabase.getInstance()
+        var databaseReference = firebaseDatabase.reference
+
+        databaseReference.child("Product").child(key!!).setValue(productModelData)
+
 
     }
 
@@ -214,11 +226,13 @@ if(downloadimage!=null)
             url = data?.data!!
 
             blinding.pimage.setImageURI(url)
+            updateImageToStorage()
         }
 
     }
 
     private fun gallaryupload() {
+
         var i = Intent(
             Intent.ACTION_PICK,
             MediaStore.Images.Media.EXTERNAL_CONTENT_URI
