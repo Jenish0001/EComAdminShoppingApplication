@@ -14,29 +14,34 @@
         android:theme="@style/Theme.AdminShoppingApplication"
         tools:targetApi="31">
         <activity
-            android:name=".updateItem_acitivity"
-            android:exported="false" />
-        <activity
-            android:name=".Home"
-            android:exported="false" />
-        <activity
-            android:name=".Home_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".loginscreen.splash_screen"
+            android:name=".UserActivitty.User_MainActivity"
             android:exported="true">
+
+
+        </activity>
+        <activity
+            android:name=".AdminShopping.loginscreen.updateItem_acitivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminShopping.Home"
+            android:exported="false" />
+        <activity
+            android:name=".AdminShopping.loginscreen.splash_screen"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
-            android:name=".loginscreen.LoginScreen"
+            android:name=".LoginScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+            android:name=".AdminShopping.loginscreen.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

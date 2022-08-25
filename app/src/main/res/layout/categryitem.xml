@@ -42,14 +42,41 @@
         </RelativeLayout>
 
 
+        <TextView
+            android:id="@+id/txtview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvvisible1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:text="suggestion categry Id: "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/categrytxtid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvvisible1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/txtview1"
+            android:fontFamily="serif"
+            android:text="hi"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/categryid"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rvvisible1"
+            android:layout_below="@+id/txtview1"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:hint="Enter Categry Id"
             android:padding="10dp"

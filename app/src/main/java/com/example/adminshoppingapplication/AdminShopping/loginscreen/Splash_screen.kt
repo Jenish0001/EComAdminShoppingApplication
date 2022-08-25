@@ -1,11 +1,11 @@
-package com.example.adminshoppingapplication.loginscreen
+package com.example.adminshoppingapplication.AdminShopping.loginscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.adminshoppingapplication.Home
-import com.example.adminshoppingapplication.MainActivity
+import com.example.adminshoppingapplication.AdminShopping.Home
+import com.example.adminshoppingapplication.LoginScreen
 import com.example.adminshoppingapplication.R
 import com.google.firebase.auth.FirebaseAuth
 

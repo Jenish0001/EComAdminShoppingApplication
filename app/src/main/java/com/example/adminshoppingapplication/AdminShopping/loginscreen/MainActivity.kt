@@ -1,4 +1,4 @@
-package com.example.adminshoppingapplication
+package com.example.adminshoppingapplication.AdminShopping.loginscreen
 
 import android.content.Intent
 import android.net.Uri
@@ -7,10 +7,12 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.adminshoppingapplication.Model.ProductModelData
+import com.example.adminshoppingapplication.AdminShopping.Adpter.Spinner_Adpter
+import com.example.adminshoppingapplication.AdminShopping.Home
+import com.example.adminshoppingapplication.AdminShopping.Model.ProductModelData
+import com.example.adminshoppingapplication.AdminShopping.ModelData
 import com.example.adminshoppingapplication.databinding.ActivityMainBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -203,18 +205,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupSpinner(data: Array<String>) {
-        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, data)
-        blinding.catSppiner.adapter = arrayAdapter
-        arrayAdapter.notifyDataSetChanged()
+        var spinnerAdpter=Spinner_Adpter(this,data)
+        blinding.catSppiner.adapter = spinnerAdpter
+        spinnerAdpter.notifyDataSetChanged()
     }
 
 }
 
 // categry add class
 //class ModelData(val id: String, val pro: String) {}
-
-
-
-
-
-

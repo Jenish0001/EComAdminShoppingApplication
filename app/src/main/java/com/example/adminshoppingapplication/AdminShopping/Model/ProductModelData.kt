@@ -1,4 +1,4 @@
-package com.example.adminshoppingapplication.Model
+package com.example.adminshoppingapplication.AdminShopping.Model
 
 import android.net.Uri
 

@@ -1,4 +1,4 @@
-package com.example.adminshoppingapplication.Model
+package com.example.adminshoppingapplication.AdminShopping.Model
 
 import android.net.Uri
 
@@ -10,6 +10,7 @@ class ModelReadData(
     val pcat: String,
     val downloadUrl: String,
     val key: String,
+    val cid: String,
 
     ) {
 }

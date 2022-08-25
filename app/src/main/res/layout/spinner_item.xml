@@ -5,11 +5,16 @@
 
 
     <TextView
-        android:id="@android:id/text1"
+        android:id="@+id/textitem"
         style="?android:attr/spinnerItemStyle"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:ellipsize="marquee"
-        android:textAlignment="inherit"/>
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:text="hi "
+        android:textSize="20dp"
+        android:fontFamily="serif"
+        android:textColor="@color/black"
+
+        />
 
 </RelativeLayout>
