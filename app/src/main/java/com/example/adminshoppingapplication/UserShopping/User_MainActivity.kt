@@ -1,4 +1,4 @@
-package com.example.adminshoppingapplication.UserActivitty
+package com.example.adminshoppingapplication.UserShopping
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

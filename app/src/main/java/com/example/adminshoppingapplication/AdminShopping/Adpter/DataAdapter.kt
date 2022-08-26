@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide
 import com.example.adminshoppingapplication.AdminShopping.Home
 import com.example.adminshoppingapplication.AdminShopping.Model.ModelReadData
 import com.example.adminshoppingapplication.R
-import com.example.adminshoppingapplication.AdminShopping.loginscreen.updateItem_acitivity
+import com.example.adminshoppingapplication.AdminShopping.AdminScreen.updateItem_acitivity
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -42,6 +42,7 @@ class DataAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewData, position: Int) {
+
         holder.pname.text = list[position].pname
         holder.pprice.text = list[position].pprice
         holder.poffer.text = list[position].poffer
@@ -61,7 +62,8 @@ class DataAdapter(
             builder1.setPositiveButton(
                 "Delet",
 
-                DialogInterface.OnClickListener { dialog, id ->
+                DialogInterface.OnClickListener {
+                        dialog, id ->
                     dr.child("Product").child(list.get(position).key).removeValue()
                     list.clear()
                     dialog.cancel()
@@ -98,6 +100,7 @@ class DataAdapter(
             i.putExtra("n7",key)
             i.putExtra("n8",list[position].cid)
             home.startActivity(i)
+
         }
     }
 

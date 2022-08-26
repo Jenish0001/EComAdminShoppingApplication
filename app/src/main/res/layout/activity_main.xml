@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".AdminShopping.loginscreen.MainActivity">
+    tools:context=".AdminShopping.AdminScreen.MainActivity">
+
     <RelativeLayout
         android:id="@+id/rv3"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/teal_700">
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/imageBtnBack"
@@ -18,18 +19,18 @@
             android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:backgroundTint="@color/white"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:tint="@color/black" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
             android:layout_toEndOf="@id/imageBtnBack"
             android:fontFamily="serif"
             android:gravity="center"
             android:text="Add Product item"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -54,7 +55,6 @@
                 android:layout_height="wrap_content">
 
 
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,15 +62,17 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/ePT"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:hint="Enter Product Name"
+                        app:startIconDrawable="@drawable/dname"
+                        app:startIconTint="@color/black"
                         android:padding="10dp"
                         app:boxStrokeColor="#3F51B5"
-                        app:hintTextColor="@color/teal_700"
+                        app:hintTextColor="@color/black"
 
                         >
 
@@ -79,14 +81,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
+                            android:pointerIcon="zoom_in"
                             android:fontFamily="serif"
-                            android:textColor="@color/teal_700"
-                            android:textCursorDrawable="?attr/colorControlActivated"
+                            android:textColor="@color/black"
+                            android:textCursorDrawable="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/ePrice"
@@ -95,11 +97,13 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/ePT"
                         android:layout_gravity="center"
+                        app:startIconDrawable="@drawable/dprice"
+                        app:startIconTint="#000"
                         android:gravity="center"
                         android:hint="Enter Product Price"
                         android:padding="10dp"
                         app:boxStrokeColor="#3F51B5"
-                        app:hintTextColor="@color/teal_700">
+                        app:hintTextColor="@color/black">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/enterProductPriceTxt"
@@ -107,8 +111,8 @@
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
                             android:fontFamily="serif"
-                            android:textColor="@color/teal_700"
-                            android:textCursorDrawable="?attr/colorControlActivated"
+                            android:textColor="@color/black"
+                            android:textCursorDrawable="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -121,10 +125,12 @@
                         android:layout_below="@id/ePrice"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        app:startIconDrawable="@drawable/doffer"
+                        app:startIconTint="#000"
                         android:hint="Enter Product Offer"
                         android:padding="10dp"
                         app:boxStrokeColor="#3F51B5"
-                        app:hintTextColor="@color/teal_700">
+                        app:hintTextColor="@color/black">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/enterProductOfferTxt"
@@ -132,8 +138,8 @@
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
                             android:fontFamily="serif"
-                            android:textColor="@color/teal_700"
-                            android:textCursorDrawable="?attr/colorControlActivated"
+                            android:textColor="@color/black"
+                            android:textCursorDrawable="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -148,8 +154,10 @@
                         android:gravity="center"
                         android:hint="Enter Product Description"
                         android:padding="10dp"
+                        app:startIconDrawable="@drawable/ddes"
+                        app:startIconTint="#000"
                         app:boxStrokeColor="#3F51B5"
-                        app:hintTextColor="@color/teal_700">
+                        app:hintTextColor="@color/black">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/enterProductDiscTxt"
@@ -157,8 +165,9 @@
                             android:layout_height="match_parent"
                             android:cursorVisible="true"
                             android:fontFamily="serif"
-                            android:textColor="@color/teal_700"
-                            android:textCursorDrawable="?attr/colorControlActivated"
+
+                            android:textColor="@color/black"
+                            android:textCursorDrawable="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </com.google.android.material.textfield.TextInputLayout>

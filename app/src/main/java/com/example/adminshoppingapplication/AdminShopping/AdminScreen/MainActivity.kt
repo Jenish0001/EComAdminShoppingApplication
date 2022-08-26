@@ -1,4 +1,4 @@
-package com.example.adminshoppingapplication.AdminShopping.loginscreen
+package com.example.adminshoppingapplication.AdminShopping.AdminScreen
 
 import android.content.Intent
 import android.net.Uri

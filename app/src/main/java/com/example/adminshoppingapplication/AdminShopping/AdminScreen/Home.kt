@@ -1,6 +1,5 @@
 package com.example.adminshoppingapplication.AdminShopping
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adminshoppingapplication.AdminShopping.Adpter.DataAdapter
 import com.example.adminshoppingapplication.AdminShopping.Model.ModelReadData
-import com.example.adminshoppingapplication.AdminShopping.loginscreen.MainActivity
+import com.example.adminshoppingapplication.AdminShopping.AdminScreen.MainActivity
 import com.example.adminshoppingapplication.R
 import com.example.adminshoppingapplication.databinding.ActivityHome2Binding
 import com.google.android.material.textfield.TextInputEditText
@@ -58,6 +57,8 @@ class Home : AppCompatActivity() {
         var categrytxtid = dialog.findViewById<TextView>(R.id.categrytxtid)
 
         readDataCategry(categorySpinner)
+
+
         arrowImg.setOnClickListener {
 
             dialog.dismiss()
@@ -156,7 +157,6 @@ class Home : AppCompatActivity() {
 
 //                    cat = category.toInt()
 
-
                     list1.add(categry)
                     data += x.child("pro").getValue().toString()
                 }
@@ -232,6 +232,7 @@ class Home : AppCompatActivity() {
         var layoutManager = LinearLayoutManager(this)
         blinding.rvView.adapter = adapter
         blinding.rvView.layoutManager = layoutManager
+
     }
 
 }

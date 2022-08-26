@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminShopping.loginscreen.splash_screen">
+    tools:context=".AdminShopping.AdminScreen.splash_screen">
 
     <ImageView
         android:layout_width="match_parent"

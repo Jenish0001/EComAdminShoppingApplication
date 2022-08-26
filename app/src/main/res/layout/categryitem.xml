@@ -14,7 +14,7 @@
             android:id="@+id/rvvisible1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/teal_700">
+            android:background="@color/white">
 
             <ImageView
                 android:id="@+id/arrowImg"
@@ -22,22 +22,21 @@
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:src="@drawable/ic_baseline_arrow_back_24" />
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_centerInParent="true"
                 android:layout_toEndOf="@id/arrowImg"
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:text="Add Categry"
-                android:textColor="@color/white"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
 
-                />
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -64,7 +63,7 @@
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/txtview1"
             android:fontFamily="serif"
-            android:text="hi"
+            android:text="1"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="normal" />
@@ -81,7 +80,9 @@
             android:hint="Enter Categry Id"
             android:padding="10dp"
             app:boxStrokeColor="#3F51B5"
-            app:hintTextColor="@color/teal_700"
+            app:startIconDrawable="@drawable/dcategry"
+            app:startIconTint="#000"
+            app:hintTextColor="@color/black"
 
             >
 
@@ -91,8 +92,8 @@
                 android:layout_height="match_parent"
                 android:cursorVisible="true"
                 android:fontFamily="serif"
-                android:textColor="@color/teal_700"
-                android:textCursorDrawable="?attr/colorControlActivated"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -103,13 +104,15 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/dcname"
+            app:startIconTint="#000"
             android:layout_below="@id/categryid"
             android:layout_gravity="center"
             android:gravity="center"
             android:hint="Enter Categry Name"
             android:padding="10dp"
             app:boxStrokeColor="#3F51B5"
-            app:hintTextColor="@color/teal_700"
+            app:hintTextColor="@color/black"
 
             >
 
@@ -119,8 +122,8 @@
                 android:layout_height="match_parent"
                 android:cursorVisible="true"
                 android:fontFamily="serif"
-                android:textColor="@color/teal_700"
-                android:textCursorDrawable="?attr/colorControlActivated"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>

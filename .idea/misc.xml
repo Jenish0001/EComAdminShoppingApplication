@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable-v24/dcategry.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable-v24/dcname.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable-v24/ddes.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable-v24/dm.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable-v24/dname.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable-v24/doffer.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable/line.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/drawable/shwod.xml" value="0.1" />

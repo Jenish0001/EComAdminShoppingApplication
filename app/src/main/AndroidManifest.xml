@@ -14,19 +14,19 @@
         android:theme="@style/Theme.AdminShoppingApplication"
         tools:targetApi="31">
         <activity
-            android:name=".UserActivitty.User_MainActivity"
+            android:name=".UserShopping.User_MainActivity"
             android:exported="true">
 
 
         </activity>
         <activity
-            android:name=".AdminShopping.loginscreen.updateItem_acitivity"
+            android:name=".AdminShopping.AdminScreen.updateItem_acitivity"
             android:exported="false" />
         <activity
             android:name=".AdminShopping.Home"
             android:exported="false" />
         <activity
-            android:name=".AdminShopping.loginscreen.splash_screen"
+            android:name=".AdminShopping.AdminScreen.splash_screen"
             android:exported="true">
 
             <intent-filter>
@@ -40,7 +40,7 @@
             android:name=".LoginScreen"
             android:exported="false" />
         <activity
-            android:name=".AdminShopping.loginscreen.MainActivity"
+            android:name=".AdminShopping.AdminScreen.MainActivity"
             android:exported="false" />
     </application>
 

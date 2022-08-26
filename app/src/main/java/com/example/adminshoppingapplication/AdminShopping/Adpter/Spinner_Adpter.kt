@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import com.example.adminshoppingapplication.AdminShopping.loginscreen.MainActivity
+import com.example.adminshoppingapplication.AdminShopping.AdminScreen.MainActivity
 import com.example.adminshoppingapplication.R
 
 class Spinner_Adpter(val mainActivity: MainActivity ,val data: Array<String>) : BaseAdapter() {

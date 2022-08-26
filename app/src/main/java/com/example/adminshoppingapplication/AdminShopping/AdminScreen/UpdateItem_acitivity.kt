@@ -1,4 +1,4 @@
-package com.example.adminshoppingapplication.AdminShopping.loginscreen
+package com.example.adminshoppingapplication.AdminShopping.AdminScreen
 
 import android.content.Intent
 import android.net.Uri
@@ -12,7 +12,6 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.adminshoppingapplication.AdminShopping.Adpter.Home_Spinner_Adpter
 import com.example.adminshoppingapplication.AdminShopping.Home
-import com.example.adminshoppingapplication.AdminShopping.Model.ModelReadData
 import com.example.adminshoppingapplication.AdminShopping.Model.ProductModelData
 import com.example.adminshoppingapplication.AdminShopping.ModelData
 import com.example.adminshoppingapplication.databinding.ActivityUpdateItemAcitivityBinding
@@ -58,7 +57,7 @@ class updateItem_acitivity : AppCompatActivity() {
         id = intent.getStringExtra("n8")
 
 
-        Toast.makeText(this, "$id", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "$id", Toast.LENGTH_SHORT).show()
 
         id1 = id!!.toInt()
 
@@ -125,6 +124,7 @@ class updateItem_acitivity : AppCompatActivity() {
                     data += x.child("pro").getValue().toString()
 
                     Log.e("TAG", "onDataChange: $stringList")
+
                 }
                 setupSpinner(data)
             }
@@ -144,7 +144,7 @@ class updateItem_acitivity : AppCompatActivity() {
         blinding.catSppiner.adapter = arrayAdapter
         arrayAdapter.notifyDataSetChanged()
 
-        blinding.catSppiner.setSelection(id1!! - 1)
+        blinding.catSppiner.setSelection(id1!!)
     }
 
     private fun updateImageToStorage() {
@@ -192,7 +192,6 @@ class updateItem_acitivity : AppCompatActivity() {
 
         databaseReference.child("Product").child(key!!).setValue(productModelData)
 
-
     }
 
     private fun updateData(temp: String) {
@@ -208,12 +207,10 @@ class updateItem_acitivity : AppCompatActivity() {
             temp,
             cid
         )
-
         var firebaseDatabase = FirebaseDatabase.getInstance()
         var databaseReference = firebaseDatabase.reference
 
         databaseReference.child("Product").child(key!!).setValue(productModelData)
-
 
     }
 
