@@ -156,7 +156,7 @@ class MainActivity : AppCompatActivity() {
 //                Toast.makeText(this@MainActivity, "${data[position]}", Toast.LENGTH_SHORT).show()
 
                 catename = data[position]
-                cid=position+1
+                cid=position
 
             }
         }

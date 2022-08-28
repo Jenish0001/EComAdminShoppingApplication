@@ -14,11 +14,14 @@
         android:theme="@style/Theme.AdminShoppingApplication"
         tools:targetApi="31">
         <activity
+            android:name=".User_Item_Show_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".bothFragment.login"
+            android:exported="true"></activity>
+        <activity
             android:name=".UserShopping.User_MainActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AdminShopping.AdminScreen.updateItem_acitivity"
             android:exported="false" />
@@ -28,16 +31,14 @@
         <activity
             android:name=".AdminShopping.AdminScreen.splash_screen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".LoginScreen"
+            android:name=".bothFragment.LoginScreen"
             android:exported="false" />
         <activity
             android:name=".AdminShopping.AdminScreen.MainActivity"

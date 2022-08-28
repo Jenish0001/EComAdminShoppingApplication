@@ -34,6 +34,7 @@ android {
 
     //     View blinding code=======
     buildFeatures {
+
         viewBinding true
     }
 
@@ -66,5 +67,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx'
 
 //    glid img
-    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+
+//     bottom navigato
+
 }

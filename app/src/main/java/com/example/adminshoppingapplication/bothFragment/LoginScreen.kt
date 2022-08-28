@@ -1,4 +1,4 @@
-package com.example.adminshoppingapplication
+package com.example.adminshoppingapplication.bothFragment
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +17,7 @@ class LoginScreen : AppCompatActivity() {
 //        setContentView(R.layout.activity_login_screen)
         blind = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(blind.root)
+
         signInMethhod()
     }
 

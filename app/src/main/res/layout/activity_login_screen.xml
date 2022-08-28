@@ -4,91 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginScreen">
+    tools:context=".bothFragment.LoginScreen">
 
 
-    <RelativeLayout
-        android:id="@+id/rv1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imglogo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/titileTxt"
+        <RelativeLayout
+            android:id="@+id/rv1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imglogo"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="serif"
-            android:gravity="center"
-            android:text="Login Admin"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailEdt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/titileTxt"
-            android:layout_marginTop="20dp"
-            android:hint="Enter Email"
-            android:padding="20dp"
-            app:boxStrokeColor="#3F51B5"
-            app:hintTextColor="#3F51B5">
+            <ImageView
+                android:id="@+id/imglogo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/EnteremailEdt"
+            <TextView
+                android:id="@+id/titileTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:cursorVisible="true"
+                android:layout_below="@+id/imglogo"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Login Admin"
                 android:textColor="@color/black"
-                android:textCursorDrawable="?attr/colorControlActivated"
-                android:textSize="18dp" />
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordEdt"
-
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/emailEdt"
-            android:layout_marginTop="5dp"
-            android:hint="Enter Password"
-            android:padding="20dp"
-            app:boxStrokeColor="#3F51B5"
-            app:hintTextColor="#3F51B5">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/EnterpasswordEdt"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailEdt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:cursorVisible="true"
-                android:textColor="@color/black"
-                android:textCursorDrawable="?attr/colorControlActivated"
-                android:textSize="18dp" />
+                android:layout_below="@id/titileTxt"
+                android:layout_marginTop="20dp"
+                android:hint="Enter Email"
+                android:padding="20dp"
+                app:boxStrokeColor="#3F51B5"
+                app:hintTextColor="#3F51B5">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EnteremailEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp" />
 
-        <Button
-            android:id="@+id/logInBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/passwordEdt"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Log IN" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </RelativeLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordEdt"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emailEdt"
+                android:layout_marginTop="5dp"
+                android:hint="Enter Password"
+                android:padding="20dp"
+                app:boxStrokeColor="#3F51B5"
+                app:hintTextColor="#3F51B5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EnterpasswordEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/logInBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/passwordEdt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="Log IN" />
+
+        </RelativeLayout>
+
 
 </RelativeLayout>

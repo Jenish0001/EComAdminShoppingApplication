@@ -11,8 +11,10 @@ import com.example.adminshoppingapplication.AdminShopping.Adpter.DataAdapter
 import com.example.adminshoppingapplication.AdminShopping.Model.ModelReadData
 import com.example.adminshoppingapplication.AdminShopping.AdminScreen.MainActivity
 import com.example.adminshoppingapplication.R
+import com.example.adminshoppingapplication.bothFragment.login
 import com.example.adminshoppingapplication.databinding.ActivityHome2Binding
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -37,10 +39,24 @@ class Home : AppCompatActivity() {
 
         productbtn()
 
+        logoutbtn()
         blinding.categoryBtn.setOnClickListener {
             categrybtn()
 
         }
+    }
+
+    private fun logoutbtn() {
+
+        blinding.logoutBtn.setOnClickListener {
+
+            var firebaseAuth = FirebaseAuth.getInstance()
+            firebaseAuth.signOut()
+            var intent = Intent(this, login::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     private fun categrybtn() {
@@ -63,8 +79,6 @@ class Home : AppCompatActivity() {
 
             dialog.dismiss()
         }
-
-
 
 
         var firebaseDatabase = FirebaseDatabase.getInstance()

@@ -11,6 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize">
 
+        <ImageView
+            android:id="@+id/logoutBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/logout" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,15 +29,14 @@
             android:text="home page"
             android:textColor="@color/black"
             android:textSize="20dp"
-
-            />
+            android:layout_toEndOf="@id/logoutBtn" />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_margin="15dp"
-          android:id="@+id/categoryBtn"
+            android:id="@+id/categoryBtn"
             android:src="@drawable/categaryicon" />
 
     </RelativeLayout>

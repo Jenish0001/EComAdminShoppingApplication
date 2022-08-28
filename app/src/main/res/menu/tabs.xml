@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab_home"
+        android:icon="@drawable/uhome"
+        android:title="home" />
+    <item
+        android:id="@+id/tab_category"
+        android:icon="@drawable/categaryicon"
+        android:title="category" />
+
+    <item
+        android:id="@+id/tab_search"
+        android:icon="@drawable/search"
+        android:title="search" />
+
+
+    <item
+        android:id="@+id/tab_orders"
+        android:icon="@drawable/ucart"
+        android:title="orders" />
+
+    <item
+        android:id="@+id/tab_user"
+        android:icon="@drawable/uuser"
+        android:title="user" />
+
+
+</menu>
