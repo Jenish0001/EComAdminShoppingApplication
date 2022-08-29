@@ -20,7 +20,7 @@ class User_MainActivity : AppCompatActivity() {
         mainblinding = ActivityUserMainBinding.inflate(layoutInflater)
         setContentView(mainblinding.root)
 
-//        bottomnavigationbar()
+        bottomnavigationbar()
 
     }
 
