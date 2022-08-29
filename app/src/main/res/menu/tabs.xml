@@ -5,10 +5,12 @@
         android:id="@+id/tab_home"
         android:icon="@drawable/uhome"
         android:title="home" />
+
     <item
         android:id="@+id/tab_category"
         android:icon="@drawable/categaryicon"
         android:title="category" />
+
 
     <item
         android:id="@+id/tab_search"
@@ -17,9 +19,9 @@
 
 
     <item
-        android:id="@+id/tab_orders"
+        android:id="@+id/tab_cart"
         android:icon="@drawable/ucart"
-        android:title="orders" />
+        android:title="Cart" />
 
     <item
         android:id="@+id/tab_user"

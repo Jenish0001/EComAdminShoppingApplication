@@ -14,14 +14,17 @@
         android:theme="@style/Theme.AdminShoppingApplication"
         tools:targetApi="31">
         <activity
-            android:name=".User_Item_Show_Activity"
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserShopping.User_Item_Show_Activity"
             android:exported="false" />
         <activity
             android:name=".bothFragment.login"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".UserShopping.User_MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".AdminShopping.AdminScreen.updateItem_acitivity"
             android:exported="false" />

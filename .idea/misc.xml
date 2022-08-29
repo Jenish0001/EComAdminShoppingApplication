@@ -30,13 +30,15 @@
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.14666666666666667" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_update_item_acitivity.xml" value="0.15091919623770841" />
-        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_user_item_show.xml" value="0.15091919623770841" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_user_item_show.xml" value="0.14666666666666667" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/activity_user_main.xml" value="0.14666666666666667" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/back_select.xml" value="0.15091919623770841" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/cartitem.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/categryitem.xml" value="0.15091919623770841" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/custom_catrgru.xml" value="0.12" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/custom_catrgru1.xml" value="0.15006412997007268" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/fragment_admin.xml" value="0.15091919623770841" />
+        <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/fragment_cart.xml" value="0.15091919623770841" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/fragment_home_frgment.xml" value="0.15091919623770841" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/fragment_sarch.xml" value="0.15091919623770841" />
         <entry key="..\:/AndroidStudioProject/AdminShoppingApplication/app/src/main/res/layout/fragment_user.xml" value="0.15091919623770841" />

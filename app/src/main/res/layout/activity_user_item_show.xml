@@ -11,15 +11,18 @@
         android:id="@+id/rv1"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize">
+
         <ImageView
+            android:id="@+id/backArrowImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/arrowleft"
-            android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
-
-            />
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/arrowleft" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -37,10 +40,197 @@
                 android:id="@+id/cvImg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_foreground" />
+
         </androidx.cardview.widget.CardView>
 
+        <RelativeLayout
+            android:id="@+id/rv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cview"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp">
 
+            <TextView
+                android:id="@+id/upname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="name"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+
+                />
+
+            <TextView
+                android:id="@+id/ruppes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upname"
+                android:fontFamily="serif"
+                android:text="₹"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/uppriceTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/upname"
+                android:layout_marginLeft="15dp"
+                android:layout_toEndOf="@id/ruppes"
+                android:fontFamily="serif"
+                android:text="price"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+
+                />
+
+            <RelativeLayout
+                android:id="@+id/offerrview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ruppes"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/offerImg"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/doffer" />
+
+                <TextView
+                    android:id="@+id/upofferTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/offerImg"
+                    android:fontFamily="serif"
+                    android:text="offer"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/offerrview"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="Description : "
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/desTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/des"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="serif"
+                android:text="Description : "
+                android:textColor="@color/black"
+                android:textSize="18dp"
+
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desTxt"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvplue"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/ruppes"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/cvTxt"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/minus" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvplue"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/ruppes"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toStartOf="@+id/cvTxt"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/plus" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvTxt"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/ruppes"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/cartBtbn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Add to cart" />
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

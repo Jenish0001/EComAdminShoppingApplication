@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+
+    <RelativeLayout
+        android:id="@+id/rv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvview"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/userItemImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@id/rv2"
+
+        >
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:maxLines="1"
+            android:text="product name"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/ruppes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameTxt"
+            android:fontFamily="serif"
+            android:text="₹"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/priceTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTxt"
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@id/ruppes"
+            android:fontFamily="serif"
+            android:text="price"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTxt"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@id/priceTxt">
+
+            <ImageView
+                android:id="@+id/offerImg"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/doffer" />
+
+            <TextView
+                android:id="@+id/offerTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/offerImg"
+                android:fontFamily="serif"
+                android:text="offer"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+
+                />
+        </RelativeLayout>
+
+
+
+        <ImageView
+            android:id="@+id/removeImg"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/trash" />
+
+    </RelativeLayout>
+</RelativeLayout>
