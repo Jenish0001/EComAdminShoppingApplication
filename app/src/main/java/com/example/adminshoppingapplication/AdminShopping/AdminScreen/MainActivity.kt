@@ -1,18 +1,29 @@
 package com.example.adminshoppingapplication.AdminShopping.AdminScreen
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.media.RingtoneManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.example.adminshoppingapplication.AdminShopping.Adpter.Spinner_Adpter
 import com.example.adminshoppingapplication.AdminShopping.Home
 import com.example.adminshoppingapplication.AdminShopping.Model.ProductModelData
 import com.example.adminshoppingapplication.AdminShopping.ModelData
+import com.example.adminshoppingapplication.R
 import com.example.adminshoppingapplication.databinding.ActivityMainBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -22,8 +33,11 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.io.File
 
+
 class MainActivity : AppCompatActivity() {
     //    var img:String?=null
+    private val CHANNEL_ID = "heads_up_alerts"
+    private val notificationId = 101
     var url: Uri? = null
     lateinit var blinding: ActivityMainBinding
     var list1 = arrayListOf<ModelData>()
@@ -31,8 +45,7 @@ class MainActivity : AppCompatActivity() {
     var data = arrayOf<String>("select")
     var downloadUri: Uri? = null
     lateinit var catename: String
-     var cid: Int? =null
-
+    var cid: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,11 +57,13 @@ class MainActivity : AppCompatActivity() {
 //         product details==============
         productInsert()
 
+
         blinding.imageBtnBack.setOnClickListener {
 
             onBackPressed()
         }
     }
+
 // product detalis insert =====
 
     private fun productInsert() {
@@ -65,6 +80,9 @@ class MainActivity : AppCompatActivity() {
 //            productInserData(productModelData)
 //         upload Img in firebase storege
             updateImg()
+            creatnotification()
+            sendnotification()
+
 
         }
 
@@ -133,7 +151,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     // categry    read==========
     private fun readData() {
 
@@ -156,7 +173,7 @@ class MainActivity : AppCompatActivity() {
 //                Toast.makeText(this@MainActivity, "${data[position]}", Toast.LENGTH_SHORT).show()
 
                 catename = data[position]
-                cid=position
+                cid = position
 
             }
         }
@@ -205,12 +222,60 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupSpinner(data: Array<String>) {
-        var spinnerAdpter=Spinner_Adpter(this,data)
+        var spinnerAdpter = Spinner_Adpter(this, data)
         blinding.catSppiner.adapter = spinnerAdpter
         spinnerAdpter.notifyDataSetChanged()
     }
 
-}
 
-// categry add class
-//class ModelData(val id: String, val pro: String) {}
+    private fun creatnotification() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            val name = "Notification Title"
+            val descriptionText = "Notification Description Text "
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val chennel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+            }
+
+            val notificationManager: NotificationManager =
+                getSystemService(android.content.Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(chennel)
+
+        }
+    }
+
+    fun sendnotification() {
+        val intent = Intent(this, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingIntent: PendingIntent =
+            PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+
+
+        var bitmap = BitmapFactory.decodeResource(
+            applicationContext.resources,
+            R.drawable.ic_launcher_foreground
+        )
+        var bitmapLargeIcon =
+            BitmapFactory.decodeResource(applicationContext.resources, R.drawable.logo)
+        var name = blinding.enterProductNameTxt.text.toString()
+        var price = blinding.enterProductPriceTxt.text.toString()
+
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle(name)
+            .setContentText(price)
+            .setLargeIcon(bitmapLargeIcon)
+            .setStyle(NotificationCompat.BigPictureStyle().bigPicture(bitmap))
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pendingIntent)
+        with(NotificationManagerCompat.from(this)) {
+            notify(notificationId, builder.build())
+        }
+
+    }
+
+
+}

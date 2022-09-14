@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".bothFragment.LoginScreen">
 
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/rv1"
@@ -15,8 +17,8 @@
 
             <ImageView
                 android:id="@+id/imglogo"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/logo" />
@@ -29,7 +31,7 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Login Admin"
+                android:text="Register"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -40,7 +42,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/titileTxt"
-                android:layout_marginTop="20dp"
                 android:hint="Enter Email"
                 android:padding="20dp"
                 app:boxStrokeColor="#3F51B5"
@@ -59,16 +60,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordEdt"
-
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/emailEdt"
-                android:layout_marginTop="5dp"
                 android:hint="Enter Password"
                 android:padding="20dp"
                 app:boxStrokeColor="#3F51B5"
-                app:hintTextColor="#3F51B5">
+                app:hintTextColor="#3F51B5"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/EnterpasswordEdt"
@@ -77,20 +77,99 @@
                     android:cursorVisible="true"
                     android:textColor="@color/black"
                     android:textCursorDrawable="?attr/colorControlActivated"
-                    android:textSize="18dp" />
+                    android:textSize="18dp"
+
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/logInBtn"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/numberphone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/passwordEdt"
+                android:hint="Enter Phone Number"
+                android:padding="20dp"
+                app:boxStrokeColor="#3F51B5"
+
+                app:hintTextColor="#3F51B5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EnterPhoneNudEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="?attr/colorControlActivated"
+                    android:textSize="18dp"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/registerBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/numberphone"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Log IN" />
+                android:text="register" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/registerBtn"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvGoogle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:id="@+id/googleBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/google" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvFaCEBOOK"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/cvGoogle"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+
+                        android:id="@+id/removeImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/facebook" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
+    </ScrollView>
 
 </RelativeLayout>

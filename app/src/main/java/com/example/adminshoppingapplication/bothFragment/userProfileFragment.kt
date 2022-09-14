@@ -15,7 +15,7 @@ import com.example.adminshoppingapplication.UserShopping.User_MainActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
-class userFragment : Fragment() {
+class userProfileFragment : Fragment() {
 
 
     lateinit var logInBtn: Button
@@ -42,6 +42,12 @@ class userFragment : Fragment() {
     }
 
     private fun regesterBtn() {
+
+        regesterTxt.setOnClickListener {
+
+            var i =Intent(requireActivity(),LoginScreen::class.java)
+                requireActivity().startActivity(i)
+        }
 
 
     }

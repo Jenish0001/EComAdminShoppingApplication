@@ -226,6 +226,7 @@ class Home : AppCompatActivity() {
                     var key = x.key.toString()
                     var cid = x.child("cid").getValue().toString()
 
+
                     var m1 = ModelReadData(pname, pprice, poffer, pdes, pcat, downloadUrl, key, cid)
 
                     list.add(m1)
@@ -235,6 +236,7 @@ class Home : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
+
 
             }
         })

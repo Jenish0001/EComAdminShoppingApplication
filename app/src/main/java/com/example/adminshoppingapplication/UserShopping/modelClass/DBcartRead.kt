@@ -7,5 +7,7 @@ data class DBcartRead(
     val pdes: String,
     val pcat: String,
     val downloadUrl: String,
-    val key: String
-)
+    val key: String,
+    val quontaty: String
+
+    )

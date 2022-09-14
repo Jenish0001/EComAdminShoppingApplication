@@ -13,9 +13,12 @@
         android:layout_height="?actionBarSize">
 
         <ImageView
+
             android:id="@+id/backArrowImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
@@ -144,21 +147,30 @@
                 android:textSize="18dp"
 
                 />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
+            >
+
             <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rvbottom1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/desTxt"
-                >
+                android:layout_height="wrap_content">
+
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cvplue"
+                    android:id="@+id/minCvBtn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_below="@+id/ruppes"
-                    android:layout_margin="5dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
                     android:layout_toEndOf="@+id/cvTxt"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="2dp">
@@ -167,22 +179,15 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginBottom="5dp"
                         android:src="@drawable/minus" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cvplue"
+                    android:id="@+id/plusBtncv"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_below="@+id/ruppes"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
                     android:layout_toStartOf="@+id/cvTxt"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="2dp">
@@ -198,17 +203,13 @@
                     android:id="@+id/cvTxt"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_below="@+id/ruppes"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="5dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="2dp">
 
                     <TextView
+                        android:id="@+id/positionTxt"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -224,13 +225,12 @@
                 android:id="@+id/cartBtbn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/rvbottom1"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
                 android:text="Add to cart" />
+
+
         </RelativeLayout>
+
     </RelativeLayout>
 </RelativeLayout>

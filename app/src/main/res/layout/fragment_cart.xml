@@ -5,35 +5,85 @@
     android:layout_height="match_parent"
     tools:context=".UserShopping.fragmentActivity.CartFragment">
 
-     <RelativeLayout
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-          <RelativeLayout
-              android:id="@+id/actionbarlayout"
-              android:layout_width="match_parent"
-              android:layout_height="?actionBarSize"
-              >
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="Cart"
-                  android:textSize="20dp"
-                  android:textColor="@color/black"
-                  android:layout_centerVertical="true"
-                  android:layout_centerHorizontal="true"
-                  android:textStyle="bold"
-                  /> 
+        <RelativeLayout
+            android:id="@+id/actionbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="#EDEDED">
 
-          </RelativeLayout>
-          <androidx.recyclerview.widget.RecyclerView
-              android:id="@+id/rvview"
-              android:layout_below="@id/actionbarlayout"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Cart"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/notificationImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="1dp"
+                android:src="@drawable/notification" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/actionbarlayout"
+            android:background="#EAEAEA" />
 
 
-     </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/ttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+
+
+                    />
+
+                <Button
+                    android:id="@+id/checkOutFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="checkout" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 
 </FrameLayout>

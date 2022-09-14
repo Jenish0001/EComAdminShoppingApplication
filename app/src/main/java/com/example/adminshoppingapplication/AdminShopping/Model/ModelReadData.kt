@@ -10,7 +10,6 @@ class ModelReadData(
     val pcat: String,
     val downloadUrl: String,
     val key: String,
-    val cid: String,
-
-    ) {
+    val cid: String
+) {
 }

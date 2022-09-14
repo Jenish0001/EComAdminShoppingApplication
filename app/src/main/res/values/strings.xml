@@ -2,4 +2,8 @@
     <string name="app_name">AdminShoppingApplication</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="client">
+336681034406-787a2lljgv21bucpt2ccjp9be2k5klpq.apps.googleusercontent.com
+    </string>
+    <string name="default_notification_channel_id" />
 </resources>

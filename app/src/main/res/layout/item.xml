@@ -8,123 +8,141 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="5dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-
-        >
+        app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:backgroundTint="#f3f3f3"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-
-                >
-
-                <ImageView
-                    android:id="@+id/img"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="0dp"
-                    android:src="@drawable/ic_launcher_background" />
-
-            </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content">
 
             <RelativeLayout
+                android:id="@+id/rv8"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@id/cv">
+                android:layout_height="wrap_content">
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="#f3f3f3"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
 
-                <TextView
-                    android:id="@+id/pname"
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:src="@drawable/ic_launcher_background" />
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:id="@+id/rb7"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="serif"
-                    android:maxLines="1"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/cv">
 
-                <TextView
-                    android:id="@+id/ptype"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pname"
-                    android:fontFamily="serif"
-                    android:text="$"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
 
-                <TextView
-                    android:id="@+id/pprice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pname"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toEndOf="@id/ptype"
-                    android:fontFamily="serif"
-                    android:maxLines="1"
-                    android:text="price"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    <TextView
+                        android:id="@+id/pname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:maxLines="1"
+                        android:text="name"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
 
-                <TextView
-                    android:id="@+id/poffer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pprice"
-                    android:fontFamily="serif"
-                    android:text="offer"
-                    android:textColor="@color/black"
-                    android:textSize="17dp"
+                    <TextView
+                        android:id="@+id/ptype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pname"
+                        android:fontFamily="serif"
+                        android:text="$"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
 
-                    />
+                    <TextView
+                        android:id="@+id/pprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pname"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@id/ptype"
+                        android:fontFamily="serif"
+                        android:maxLines="1"
+                        android:text="price"
+                        android:textColor="@color/black"
+                        android:textSize="17dp" />
 
-                <TextView
-                    android:id="@+id/ptaka"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pprice"
-                    android:layout_toEndOf="@id/poffer"
-                    android:fontFamily="serif"
-                    android:maxLines="1"
-                    android:text=" %"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
+                    <TextView
+                        android:id="@+id/poffer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pprice"
+                        android:fontFamily="serif"
+                        android:text="offer"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
 
-                    />
+                        />
 
-                <TextView
-                    android:id="@+id/pdic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/poffer"
-                    android:fontFamily="serif"
-                    android:maxLines="2"
-                    android:text="Decsciption"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    <TextView
+                        android:id="@+id/ptaka"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pprice"
+                        android:layout_toEndOf="@id/poffer"
+                        android:fontFamily="serif"
+                        android:maxLines="1"
+                        android:text=" %"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
 
+                        />
+
+                    <TextView
+                        android:id="@+id/pdic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/poffer"
+                        android:fontFamily="serif"
+                        android:maxLines="2"
+                        android:text="Decsciption"
+                        android:textColor="@color/black"
+                        android:textSize="17dp" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv8">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvDelet"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
                     android:background="@drawable/line"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
                     app:cardUseCompatPadding="true"
 
@@ -146,9 +164,12 @@
                     android:id="@+id/cvupdate"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/cvDelet"
+                    android:clickable="true"
                     android:defaultFocusHighlightEnabled="true"
+                    android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
                     app:cardUseCompatPadding="true">
 
@@ -160,10 +181,13 @@
                         android:text="Edit Data"
                         android:textColor="#D24CCF15"
                         android:textSize="16dp"
-                        android:textStyle="bold"
-                        />
+                        android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
+
+
             </RelativeLayout>
+
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

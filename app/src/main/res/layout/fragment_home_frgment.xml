@@ -8,7 +8,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#F3F3F3"
+        >
 
         <RelativeLayout
             android:id="@+id/rv1"
@@ -25,11 +27,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvitem"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    app:cardCornerRadius="30dp"
-
-                    >
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="30dp">
 
                     <ImageView
                         android:id="@+id/userImg"
@@ -49,7 +52,7 @@
                     android:fontFamily="serif"
                     android:text="username"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
+                    android:textSize="15dp"
 
                     />
 
@@ -62,11 +65,13 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:padding="1dp"
                 android:src="@drawable/notification" />
 
             <ImageView
-                android:id="@+id/favriteImg"
+                android:id="@+id/wishlistBtn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
@@ -75,6 +80,8 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
                 android:layout_toStartOf="@id/notificationBtn"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:src="@drawable/like" />
 
         </RelativeLayout>
@@ -86,18 +93,48 @@
             android:layout_below="@id/rv1">
 
             <androidx.appcompat.widget.SearchView
+                android:visibility="gone"
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="#EDEDED">
 
             </androidx.appcompat.widget.SearchView>
 
+            <RelativeLayout
+                android:id="@+id/imageSlider1"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/searchView"
+                android:layout_height="200dp">
+
+
+                        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                            android:id="@+id/carouselHomeFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:autoPlay="true"
+                            app:autoPlayDelay="2000"
+                            app:captionMargin="@dimen/cardview_compat_inset_shadow"
+                            app:infiniteCarousel="true"
+                            app:showNavigationButtons="false"
+                            app:showCaption="true"
+                            />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hi"
+                android:id="@+id/txt"
+                android:visibility="gone"
+                android:layout_below="@id/imageSlider1"
+                />
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/searchView"
-
+                android:layout_below="@id/txt"
 
                 />
 

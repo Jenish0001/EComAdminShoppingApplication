@@ -12,8 +12,8 @@ class adpterlayout(fragment: login) : FragmentStateAdapter(fragment) {
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> adminFragment()
-            1 -> userFragment()
-            else -> userFragment()
+            1 -> userProfileFragment()
+            else -> userProfileFragment()
 
         }
     }

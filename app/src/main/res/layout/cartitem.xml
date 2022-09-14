@@ -3,18 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp">
+    android:padding="10dp"
+    android:background="#F3F3F3"
+    >
 
 
     <RelativeLayout
         android:id="@+id/rv2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cvview"
             android:layout_width="100dp"
-            android:layout_height="120dp"
+            android:layout_height="100dp"
             android:padding="10dp"
             app:cardCornerRadius="10dp"
 
@@ -48,17 +50,18 @@
             android:maxLines="1"
             android:text="product name"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/ruppes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nameTxt"
+            android:layout_marginTop="5dp"
             android:fontFamily="serif"
             android:text="₹"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/priceTxt"
@@ -66,26 +69,28 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/nameTxt"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+
             android:layout_toEndOf="@id/ruppes"
             android:fontFamily="serif"
             android:text="price"
             android:textColor="@color/black"
-            android:textSize="17dp"
-
-            />
+            android:textSize="15dp" />
 
         <RelativeLayout
+            android:id="@+id/offerrev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nameTxt"
+            android:layout_below="@id/priceTxt"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toEndOf="@id/priceTxt">
+            android:layout_marginTop="5dp"
+
+            >
 
             <ImageView
                 android:id="@+id/offerImg"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
                 android:layout_centerVertical="true"
                 android:src="@drawable/doffer" />
 
@@ -99,23 +104,120 @@
                 android:fontFamily="serif"
                 android:text="offer"
                 android:textColor="@color/black"
-                android:textSize="17dp"
+                android:textSize="15dp"
 
                 />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/offerrev">
 
+            <RelativeLayout
+                android:id="@+id/rvbottom1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
 
-        <ImageView
-            android:id="@+id/removeImg"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="2dp"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rvbottom2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/minCvBtn"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="8dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/minus" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/plusBtncv"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                           >
+
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/plus" />
+                        </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvTxt"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerHorizontal="true"
+
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="2dp">
+
+                        <TextView
+                            android:id="@+id/positionTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvplue"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/trash" />
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp">
 
+            <ImageView
+                android:id="@+id/removeImg"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="center"
+                android:src="@drawable/trash"
+                 />
+
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </RelativeLayout>

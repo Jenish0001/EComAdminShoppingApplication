@@ -23,6 +23,7 @@
             app:tint="@color/black" />
 
         <TextView
+            android:id="@+id/txtBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

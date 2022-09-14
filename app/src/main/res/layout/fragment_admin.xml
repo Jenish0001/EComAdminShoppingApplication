@@ -82,8 +82,10 @@
             android:layout_below="@id/passwordEdt"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:backgroundTintMode="screen"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:background="@drawable/back_select"
+            android:backgroundTintMode="screen"
             android:text="Log IN" />
 
     </RelativeLayout>

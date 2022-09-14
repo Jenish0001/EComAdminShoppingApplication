@@ -5,20 +5,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+
 import com.example.adminshoppingapplication.R
-import com.example.adminshoppingapplication.UserShopping.fragmentActivity.CartFragment
-import com.example.adminshoppingapplication.UserShopping.fragmentActivity.homeFrgment
-import com.example.adminshoppingapplication.UserShopping.fragmentActivity.sarchFragment
+import com.example.adminshoppingapplication.UserShopping.fragmentActivity.*
 import com.example.adminshoppingapplication.databinding.ActivityUserMainBinding
 
 class User_MainActivity : AppCompatActivity() {
 
-    lateinit var mainblinding: ActivityUserMainBinding
+    lateinit var blinding: ActivityUserMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainblinding = ActivityUserMainBinding.inflate(layoutInflater)
-        setContentView(mainblinding.root)
+        blinding = ActivityUserMainBinding.inflate(layoutInflater)
+        setContentView(blinding.root)
 
         bottomnavigationbar()
 
@@ -28,26 +27,28 @@ class User_MainActivity : AppCompatActivity() {
 
         val homefragment = homeFrgment()
         val serchfragment = sarchFragment()
-        val cardfragment = CartFragment(this)
+        val cardfragment = CartFragment()
+        val categor = categryFragment()
+        val user = user_Fragment()
 
         loadFragment(homefragment)
 
-        mainblinding.bottomNav.setOnNavigationItemSelectedListener {
+        blinding.bottomNav.setOnNavigationItemSelectedListener {
 
             when (it.itemId) {
+
                 R.id.tab_home -> loadFragment(homefragment)
-                R.id.tab_category -> loadFragment(serchfragment)
+                R.id.tab_category -> loadFragment(categor)
                 R.id.tab_search -> loadFragment(serchfragment)
                 R.id.tab_cart -> loadFragment(cardfragment)
-                R.id.tab_user -> loadFragment(serchfragment)
-
-
+                R.id.tab_user -> loadFragment(user)
             }
             true
         }
     }
 
     private fun loadFragment(fragment: Fragment) =
+
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.wrapper, fragment)
             commit()
@@ -55,6 +56,7 @@ class User_MainActivity : AppCompatActivity() {
 
     fun chageActivity(activity: Activity)
     {
+
         var i=Intent(this,activity::class.java)
         startActivity(i)
 

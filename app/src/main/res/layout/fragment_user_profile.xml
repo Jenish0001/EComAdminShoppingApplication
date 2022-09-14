@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#52E1E1E1"
+    tools:context=".UserShopping.fragmentActivity.user_Fragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rvActionbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="#F3F3F3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="user"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+
+                />
+
+            <ImageView
+                android:id="@+id/settingIMg"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/settings" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rvActionbar"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rv1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+              >
+
+                <RelativeLayout
+                    android:id="@+id/rv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvitem"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <ImageView
+                            android:id="@+id/userImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/logo" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/userid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cvitem"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="user name"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rv2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/profileImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/user" />
+
+                        <TextView
+                            android:id="@+id/edit_Profilel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/profileImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Edit profile"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta1"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv1"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/addressImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/location" />
+
+                        <TextView
+                            android:id="@+id/addressTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/addressImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Address"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta2"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv2"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/paymentImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/payment" />
+
+                        <TextView
+                            android:id="@+id/paymentTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/paymentImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Payment"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta3"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv3"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/favriteImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/like" />
+
+                        <TextView
+                            android:id="@+id/favriteTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/favriteImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="My Wishlist"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta4"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv4"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/laguageImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/language" />
+
+                        <TextView
+                            android:id="@+id/languageTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/laguageImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Language"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta5"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv5"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/DarkImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/eye" />
+
+                        <TextView
+                            android:id="@+id/DarkTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/DarkImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Dark Mode"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta6"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv6"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/privacyPolishiImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/lockes" />
+
+                        <TextView
+                            android:id="@+id/privacyPolishiTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/privacyPolishiImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Privacy Policy"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta7"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv7"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/securityImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/security" />
+
+                        <TextView
+                            android:id="@+id/securityTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/securityImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Security"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta8"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv8"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/invateFriendsImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/multiuser" />
+
+                        <TextView
+                            android:id="@+id/invateFriendsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/invateFriendsImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Invite Friends"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta9"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv9"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/helpCenterImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/info" />
+
+                        <TextView
+                            android:id="@+id/helpCenterTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/helpCenterImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Help Center"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <ImageView
+                            android:id="@+id/righta10"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/rightarrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rvRv11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rvRv10"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/logoutImg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/logoutredc" />
+
+                        <TextView
+                            android:id="@+id/logoutTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toEndOf="@id/logoutImg"
+                            android:clickable="true"
+                            android:fontFamily="serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Log Out"
+                            android:textColor="@color/add"
+                            android:textSize="18dp" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</FrameLayout>

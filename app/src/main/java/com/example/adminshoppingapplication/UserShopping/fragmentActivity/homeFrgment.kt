@@ -6,64 +6,73 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.adminshoppingapplication.AdminShopping.Model.ModelReadData
 import com.example.adminshoppingapplication.R
+import com.example.adminshoppingapplication.UserShopping.Activity.wishList
 import com.example.adminshoppingapplication.UserShopping.adpter.userAdpter
-import com.example.adminshoppingapplication.bothFragment.login
+import com.example.adminshoppingapplication.databinding.FragmentHomeFrgmentBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 
-class homeFrgment : Fragment() {
+class homeFrgment() : Fragment() {
 
-    lateinit var recyclerView: RecyclerView
-    lateinit var favriteImg: ImageView
+    var list1 = arrayListOf<CarouselItem>()
     var list = arrayListOf<ModelReadData>()
-
+    lateinit var bliding: FragmentHomeFrgmentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_home_frgment, container, false)
+        bliding = FragmentHomeFrgmentBinding.inflate(layoutInflater)
 
-        recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-        favriteImg = view.findViewById<ImageView>(R.id.favriteImg)
-
-//        setuprv(list)
         readdata()
-        logout()
 
-        return view
+        usersetName()
+        imageSlider()
+
+        wichlist()
+
+        return bliding.root
     }
 
-    private fun logout() {
+    private fun wichlist() {
 
-        favriteImg.setOnClickListener {
+        bliding.wishlistBtn.setOnClickListener {
 
-            var firebaseAuth = FirebaseAuth.getInstance()
-            firebaseAuth.signOut()
-            var intent = Intent(requireActivity(), login::class.java)
-            startActivity(intent)
-            requireActivity().finish()
+            var i=Intent(activity,wishList::class.java)
+            activity?.startActivity(i)
         }
     }
 
+    private fun usersetName() {
+
+        var firebaseAuth = FirebaseAuth.getInstance()
+        var user = firebaseAuth.currentUser
+        var u = user?.photoUrl
+        var uname = user?.displayName
+
+        Glide.with(requireActivity()).load(u).into(bliding.userImg)
+        bliding.userTxt.text = uname
+    }
+
+
     private fun setuprv(list: ArrayList<ModelReadData>) {
 
-        var useradpter = userAdpter(requireActivity(), list)
-        var layoutManager = GridLayoutManager(requireContext(), 2)
-        recyclerView.adapter = useradpter
-        recyclerView.layoutManager = layoutManager
+        var useradpter = userAdpter(activity, list)
+        var layoutManager = GridLayoutManager(activity, 2)
+        bliding.recycler.adapter = useradpter
+        bliding.recycler.layoutManager = layoutManager
 
     }
 
@@ -93,12 +102,53 @@ class homeFrgment : Fragment() {
 
                 }
                 setuprv(list)
+
             }
 
             override fun onCancelled(error: DatabaseError) {
 
             }
         })
+    }
+
+    fun imageSlider() {
+
+        list1.clear()
+
+        list1.add(
+            CarouselItem(
+                imageUrl = "https://www.designhill.com/design-blog/wp-content/uploads/2018/10/Marley-Tshirts.jpg",
+                caption = "T-Shirts"
+            )
+        )
+        list1.add(
+            CarouselItem(
+                imageUrl = "https://i.pinimg.com/originals/66/23/c7/6623c7a1ecffd8971c3baf9dcb148ae3.jpg",
+                caption = "All-Phone"
+            )
+        )
+        list1.add(
+            CarouselItem(
+                imageUrl = "https://www.91-cdn.com/hub/wp-content/uploads/2021/03/Laptop-under-50000.jpg",
+                caption = "Leptop"
+            )
+        )
+        list1.add(
+            CarouselItem(
+                imageUrl = "https://www.wareable.com/media/imager/202107/35589-original.jpg",
+                caption = "Watch"
+            )
+        )
+
+        list1.add(
+            CarouselItem(
+                imageUrl = "https://www.hp.com/us-en/shop/app/assets/images/uploads/prod/How%20to%20Clean%20a%20Computer%20Keyboard1646149371308147.jpg",
+                caption = "Keyboard"
+            )
+        )
+
+
+        bliding.carouselHomeFragment.setData(list1)
     }
 
 }

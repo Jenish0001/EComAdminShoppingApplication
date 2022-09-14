@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.example.adminshoppingapplication.UserShopping.fragmentActivity.CartFragment
 import com.example.adminshoppingapplication.UserShopping.modelClass.DBCartInsert
 import com.example.adminshoppingapplication.databinding.ActivityUserItemShowBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -13,6 +12,8 @@ import com.google.firebase.database.FirebaseDatabase
 class User_Item_Show_Activity : AppCompatActivity() {
 
     lateinit var blinding: ActivityUserItemShowBinding
+    var quntaty:Int?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         blinding = ActivityUserItemShowBinding.inflate(layoutInflater)
@@ -42,18 +43,23 @@ class User_Item_Show_Activity : AppCompatActivity() {
             var user = firebaseAuth.currentUser
             var uid = user?.uid.toString()
 
+            quntaty=1
+
             var carddata = DBCartInsert(
-                pname, pprice, pcat, pdes, downloadimage,poffer
+                pname, pprice, pcat, pdes, downloadimage, poffer, quntaty!!.toString()
             )
 
             databaseReference.child("AddCart").child(uid).push().setValue(carddata)
 
-            var i= Intent(this,User_MainActivity::class.java)
+            var i = Intent(this, User_MainActivity::class.java)
             startActivity(i)
-
 
         }
 
+        addtocardposition()
+    }
+
+    private fun addtocardposition() {
 
     }
 

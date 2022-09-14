@@ -35,6 +35,7 @@ class updateItem_acitivity : AppCompatActivity() {
     var cid: Int? = null
 
 
+
     lateinit var blinding: ActivityUpdateItemAcitivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

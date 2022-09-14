@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".bothFragment.userFragment">
+    tools:context=".bothFragment.userProfileFragment">
 
     <RelativeLayout
         android:id="@+id/rv1"
@@ -80,9 +80,9 @@
         <TextView
             android:id="@+id/regesterTxt"
             android:layout_width="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:layout_below="@id/passwordEdt"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:fontFamily="serif"
             android:gravity="center"

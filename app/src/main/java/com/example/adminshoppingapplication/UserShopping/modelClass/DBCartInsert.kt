@@ -6,7 +6,8 @@ data class DBCartInsert(
     val pcat: String?,
     val pdes: String?,
     val downloadimage: String?,
-    val poffer: String?
+    val poffer: String?,
+    val quontaty:  String
 ) {
 
 }
