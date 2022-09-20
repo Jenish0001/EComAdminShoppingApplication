@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
     android:background="#F3F3F3"
-    >
+    android:padding="10dp">
 
 
     <RelativeLayout
@@ -114,86 +113,66 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/offerrev">
 
-            <RelativeLayout
-                android:id="@+id/rvbottom1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardCornerRadius="2dp"
-                    >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="96dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border">
 
                     <RelativeLayout
-                        android:id="@+id/rvbottom2"
-                        android:layout_width="match_parent"
+                        android:id="@+id/minCvBtn"
+                        android:layout_width="32dp"
                         android:layout_height="match_parent"
+                        android:background="#0D000000"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
 
-                        >
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/minCvBtn"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="8dp"
-                            android:clickable="true"
-                            android:foreground="?android:attr/selectableItemBackground">
-
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="10dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/minus" />
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/plusBtncv"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:clickable="true"
-                            android:foreground="?android:attr/selectableItemBackground"
-                           >
-
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="10dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/plus" />
-                        </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cvTxt"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_centerHorizontal="true"
-
-                        app:cardCornerRadius="7dp"
-                        app:cardElevation="2dp">
-
-                        <TextView
-                            android:id="@+id/positionTxt"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="1"
-                            android:textColor="@color/black"
-                            android:textSize="13dp"
-                            android:textStyle="bold" />
-                    </androidx.cardview.widget.CardView>
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/minus" />
 
                     </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
 
+                    <TextView
+                        android:id="@+id/positionTxt"
+                        android:layout_width="32dp"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/minCvBtn"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/plusBtncv"
+                        android:layout_width="32dp"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/positionTxt"
+                        android:background="#0D000000"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/plus" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
             </RelativeLayout>
 
+            <!--            =============-->
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView
@@ -215,8 +194,7 @@
                 android:layout_width="17dp"
                 android:layout_height="17dp"
                 android:layout_gravity="center"
-                android:src="@drawable/trash"
-                 />
+                android:src="@drawable/trash" />
 
         </androidx.cardview.widget.CardView>
     </RelativeLayout>

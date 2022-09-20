@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -88,7 +89,7 @@ class CartFragment() : Fragment() {
                 }
             })
 
-//        bottomsheet()
+        bottomsheet()
 
         return view
 
@@ -100,9 +101,7 @@ class CartFragment() : Fragment() {
 
             val dialog = BottomSheetDialog(requireActivity())
             val view = layoutInflater.inflate(R.layout.bottomsheet, null)
-
-            val btnClose = view.findViewById<Button>(R.id.idBtnDismiss)
-            val idTVCourseTracks = view.findViewById<TextView>(R.id.idTVCourseTracks)
+            val btnClose = view.findViewById<ImageView>(R.id.idBtnDismiss)
 
 
 

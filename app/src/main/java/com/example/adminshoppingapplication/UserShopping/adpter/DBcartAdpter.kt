@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentActivity
@@ -28,8 +29,8 @@ class DBcartAdpter(val cartFragment: FragmentActivity?, val list: ArrayList<DBca
         var offerTxt = itemView.findViewById<TextView>(R.id.offerTxt)
         var userItemImg = itemView.findViewById<ImageView>(R.id.userItemImg)
         var removeImg = itemView.findViewById<ImageView>(R.id.removeImg)
-        var plusBtncv = itemView.findViewById<CardView>(R.id.plusBtncv)
-        var minCvBtn = itemView.findViewById<CardView>(R.id.minCvBtn)
+        var plusBtncv = itemView.findViewById<RelativeLayout>(R.id.plusBtncv)
+        var minCvBtn = itemView.findViewById<RelativeLayout>(R.id.minCvBtn)
         var positionTxt = itemView.findViewById<TextView>(R.id.positionTxt)
 
     }
@@ -64,8 +65,7 @@ class DBcartAdpter(val cartFragment: FragmentActivity?, val list: ArrayList<DBca
         holder.plusBtncv.setOnClickListener {
             var t = list.get(position).quontaty.toInt()
 
-            if(t<10)
-            {
+            if (t < 10) {
                 temp = t + 1
                 insert(position, temp!!)
 
@@ -77,8 +77,7 @@ class DBcartAdpter(val cartFragment: FragmentActivity?, val list: ArrayList<DBca
 
             var t = list.get(position).quontaty.toInt()
 
-            if(t>1)
-            {
+            if (t > 1) {
                 temp = t - 1
                 insert(position, temp!!)
             }
@@ -113,6 +112,7 @@ class DBcartAdpter(val cartFragment: FragmentActivity?, val list: ArrayList<DBca
     }
 
     override fun getItemCount(): Int {
+
         return list.size
     }
 

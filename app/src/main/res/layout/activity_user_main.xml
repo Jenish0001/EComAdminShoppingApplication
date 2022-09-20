@@ -10,13 +10,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="65dp">
+        android:layout_marginBottom="55dp">
 
         <FrameLayout
             android:id="@+id/wrapper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="0dp" />
+
 
     </RelativeLayout>
 

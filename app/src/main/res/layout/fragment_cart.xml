@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -47,28 +48,45 @@
             android:background="#EAEAEA" />
 
 
-
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:padding="10dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true"
 
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true">
+            >
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
 
+
+                <TextView
+                    android:id="@+id/titleTotalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Total Amount :- "
+                    android:textColor="@color/black"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+
+                    />
 
                 <TextView
                     android:id="@+id/ttext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/titleTotalText"
+                    android:layout_marginLeft="20dp"
+                    android:text="total "
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-
+                    android:textSize="15dp"
 
                     />
 
@@ -78,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
                     android:text="checkout" />
 
             </RelativeLayout>
@@ -85,5 +104,6 @@
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
+
 
 </FrameLayout>
