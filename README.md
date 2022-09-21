@@ -46,6 +46,6 @@
  
  ## Details
  
- -- application using to firebase,storage,realtime database, authntication.
- --
+ - application using to firebase,storage,realtime database, authntication.
+ 
  
